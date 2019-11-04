@@ -1,4 +1,4 @@
-# Three useful dots - The rest and The spread in JavaScript
+# Three useful dots - the rest and the spread in JavaScript
 
 ECMAScript 2015 brought us a lot of news, which resulted in a large number of improvements. Today we will take a closer look at two features that make life easier. Meet the rest paremeters and the spread syntax.
 
@@ -19,7 +19,6 @@ The spread operator allows us to expand iterable objects into individual element
 
 ```js
 const sum = (x, y, z) => x + y + z;
-
 const numbers = [1, 2, 3];
 
 console.log(sum(...numbers)); // 6
@@ -81,7 +80,6 @@ console.log(newArray); // [4]
 ```js
 const array0 = [4, 5, 6];
 const array1 = [1, 2, 3];
-
 const newArray = [...array1, ...array0];
 
 console.log(newArray); // [ 1, 2, 3, 4, 5, 6 ]
@@ -107,10 +105,8 @@ console.log(z); // { a: 3, b: 4 }
 
 ### Creating a copy of an object
 
-Note that the copy of the object that is created is a new object with all the original object’s properties but none of its prototypal information.
-
 ```js
-const person = {
+let person = {
   name: 'John',
   age: 25,
   wallet: {
@@ -118,7 +114,7 @@ const person = {
     currency: 'USD'
   }
 };
-const personCopy = { ...person };
+let personCopy = { ...person };
 
 console.log(personCopy);
 // {
@@ -129,6 +125,15 @@ console.log(personCopy);
 //     currency: 'USD'
 //   }
 // }
+```
+
+Note that the copy of the object that is created is a new object with all the original object’s properties but none of its prototypal information.
+
+```js
+person.age = 20;
+
+console.log(person.age); // 20
+console.log(personCopy.age); // 25
 ```
 
 ### Conditionally adding properties to objects
@@ -178,6 +183,6 @@ console.log(conditionalMerge);
 This is similar to calling the split method with an empty string as the parameter.
 
 ```js
-let splitted = [...'qwerty'];
-console.log(splitted); // [ 'q', 'w', 'e', 'r', 't', 'y' ]
+const split = [...'qwerty'];
+console.log(split); // [ 'q', 'w', 'e', 'r', 't', 'y' ]
 ```
