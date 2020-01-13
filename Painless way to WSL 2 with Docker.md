@@ -85,7 +85,7 @@ The most common example of unremoved remains is the old Docker approach to set e
 
    ```
    C:\Program Files\Docker
-   C:\ProgramData\Docker Desktop
+   C:\ProgramData\DockerDesktop
    C:\Users\[USERNAME]\.docker
    C:\Users\[USERNAME]\AppData\Local\Docker
    C:\Users\[USERNAME]\AppData\Roaming\Docker
