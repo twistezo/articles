@@ -33,7 +33,7 @@ Let's write a simple code and track what's happening on the call stack.
     <img src="./img/stack.gif" width="500"/>
 </p>
 
-As you can see, the tasks are added to the stack, executed and later deleted. It's the so-called LIFO way - Last In, First Out. Each entry in the call stack is called a `stack frame`.
+As you can see, the functions are added to the stack, executed and later deleted. It's the so-called LIFO way - Last In, First Out. Each entry in the call stack is called a `stack frame`.
 
 Knowledge of the call stack is useful for reading error stack traces. Generally, the exact reason for the error is at the top in first line, though the order of code execution is bottom-up.
 
