@@ -1,6 +1,6 @@
 # My programming articles
 
-1. <a href="Event Loop in JavaScript">"Asynchronous and Single-threaded JavaScript? Meet the Event Loop"</a>
+1. <a href="/Event Loop in JavaScript.md">"Asynchronous and Single-threaded JavaScript? Meet the Event Loop"</a>
 
 2. <a href="How to create Google Chrome Extension on example of Netflix subtitles styler">"How to create Google Chrome Extension on example of Netflix subtitles styler"</a>
 
