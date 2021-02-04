@@ -9,3 +9,5 @@
 4. <a href="/Understanding the `this` keyword in JavaScript.md">"Understanding the `this` keyword in JavaScript"</a>
 
 5. <a href="/Three useful dots - The rest and The spread in JavaScript.md">"Three useful dots - the rest and the spread in JavaScript"</a>
+
+6. <a href="/JavaScript Security Vulnerabilities.md">"JavaScript Security Vulnerabilities"</a>
