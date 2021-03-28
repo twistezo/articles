@@ -1,60 +1,6 @@
-# JavaScript Security Vulnerabilities
+# XSS
 
-## Table of Contents
-
-1. [target="\_blank"](#1)
-2. [XSS](#2)
-
-<a name="1"></a>
-
-## target="\_blank"
-
-### Attack scenario
-
-1. Suppose the victim uses facebook which is known for opening links via `target="_blank"`
-2. Create a fake viral page
-3. Create a phishing website that looks like facebook sign in
-4. Put below code on viral page
-   ```
-   window.opener.location = 'https://phishing-website/facebook.com';
-   ```
-5. The victim clicks on link on FB to the viral page
-6. The viral page redirects the FB tab to phishing website asking user to sign in again
-
-So we can change the "parent" tab from infected "children" page by `window` object from Web API.
-
-Note that modern browsers makes `window.opener` function in child tab as `null` to prevent this behaviour.
-
-### Example code
-
-```html
-<a href="https://github.com" target="_blank">Go to GitHub - infected link</a>
-```
-
-```js
-const link = document.getElementsByTagName('a')
-if (link)
-  link[0].onclick = () => {
-    if (window) window.opener.location = 'https://stackoverflow.com'
-  }
-```
-
-Above is the infected link which originally opens new tab with GitHub page but meanwhile it changes our "parent" page to Stackoverflow site.
-
-### Live example
-
-https://codesandbox.io/s/targetblank-vulnerability-r8uij
-
-### Solutions
-
-- HTML - add `rel="noopener noreferrer"` to `<a>` tag.
-- JS - add `window.opener = null` after `window.open()`.
-
-<a name="2"></a>
-
-## XSS
-
-### About
+## About
 
 XSS (Cross-site scripting) attacks enable attackers to inject client-side scripts into web pages viewed by other users.
 
@@ -63,7 +9,7 @@ The main effects of this vulnerability are the possibility of:
 - execution of any actions in the context of the logged in user
 - reading any data in the context of the logged in user
 
-### Attack scenario
+## Attack scenario
 
 1. The attacker locates the XSS vulnerability on a website used by the victim, e.g. a bank's website
 2. The victim is currently logged on to this page
@@ -73,7 +19,7 @@ The main effects of this vulnerability are the possibility of:
 
 It is worth noting that performing operations on behalf of the victim may be invisible to the victim, as it may take place in the background using the bank's API or the attacker may perform it in some time with the data needed for authentication, tokens, cookies, etc.
 
-### XSS types
+## XSS types
 
 1. Reflected XSS
 
@@ -95,7 +41,7 @@ It is worth noting that performing operations on behalf of the victim may be inv
 
    It is one where the malicious code gets written on the server side. For example, we may send comment with malicious code to a blog post that is uploaded to the server. His task is, for example, to wait for the administrator's moderation to steal his session data, etc.
 
-### Sample injections
+## Injection methods
 
 1.  In the tag content
 
@@ -153,11 +99,11 @@ It is worth noting that performing operations on behalf of the victim may be inv
     <a href="javascript:change('%27);alert(1)//')">click</a>
     ```
 
-### Live example
+## Live example
 
 https://codesandbox.io/s/xss-vulnerability-iedok
 
-### Solutions
+## Defense methods
 
 1. Data encoding using built-in functions found in many programming languages.
 2. Using template systems with automatic encoding. Most of the popular framework that use such systems protect us from XSS injection (Django, Templates, Vue, React etc.).
