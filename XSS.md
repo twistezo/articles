@@ -6,8 +6,8 @@ XSS (Cross-site scripting) attacks enable attackers to inject client-side script
 
 The main effects of this vulnerability are the possibility of:
 
-- execution of any actions in the context of the logged in user
-- reading any data in the context of the logged in user
+- execution of any actions in the context of the logged-in user
+- reading any data in the context of the logged-in user
 
 ## Attack scenario
 
@@ -23,7 +23,7 @@ It is worth noting that performing operations on behalf of the victim may be inv
 
 1. Reflected XSS
 
-   It is one where HTML/JS code contained in any parameter (eg GET, POST or cookie) is displayed in response.
+   It is one where HTML/JavaScript code contained in any parameter (e.g. GET, POST or cookie) is displayed in response.
 
    A page with a text input to search for something that puts the parameter `?search=foo` in the URL ending when querying the API. After entering any phrase, in case of not finding it, we get a return message placed in HTML ex.
 
@@ -31,7 +31,7 @@ It is worth noting that performing operations on behalf of the victim may be inv
    <div>No result found for <b>foo</b></div>
    ```
 
-   We can try put in URL `?search=<script>alert('XSS')</script>`.
+   We can try to put in URL `?search=<script>alert('XSS')</script>`.
 
 2. DOM XSS
 
@@ -75,7 +75,7 @@ It is worth noting that performing operations on behalf of the victim may be inv
     <a href="javascript:alert('XSS')"></a>
     ```
 
-5.  In a string inside JS code
+5.  In the string inside JavaScript code
 
     `";alert('XSS')//` into
 
@@ -83,17 +83,17 @@ It is worth noting that performing operations on behalf of the victim may be inv
     <script>let username="";alert('XSS')//";</script>
     ```
 
-6.  In the attribute with the JS event
+6.  In the attribute with the JavaScript event
 
-    `&#39;);alert('XSS')//` where `&#39` is apostrophe, into
+    `&#39;);alert('XSS')//` where `&#39;` is a single quote, into
 
-    ```js
+    ```html
     <div onclick="change('&#39;);alert('XSS')//')">John</div>
     ```
 
-7.  In the href attribute inside the JS protocol
+7.  In the `href` attribute inside the JavaScript protocol
 
-    `%27);alert(1)//` where `%27` is apostrophe, into
+    `%27);alert(1)//` where `%27` is a single quote, into
 
     ```html
     <a href="javascript:change('%27);alert(1)//')">click</a>
