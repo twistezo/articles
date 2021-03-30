@@ -1,8 +1,8 @@
-# XSS
+# XSS (Cross-site scripting) vulnerability
 
 ## About
 
-XSS (Cross-site scripting) attacks enable attackers to inject client-side scripts into web pages viewed by other users.
+XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users.
 
 The main effects of this vulnerability are the possibility of:
 
