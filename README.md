@@ -12,4 +12,4 @@
 
 6. <a href="/target=_blank vulnerability.md">`target="_blank"` vulnerability</a>
 
-7. <a href="/XSS.md">XSS</a>
+7. <a href="/XSS.md">XSS (Cross-site scripting) vulnerability</a>
