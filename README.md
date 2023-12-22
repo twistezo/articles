@@ -1,3 +1,7 @@
+[deprecated] See continuation on https://github.com/twistezo/blog
+
+---
+
 # My programming articles
 
 1. <a href="/Event Loop in JavaScript.md">Asynchronous and Single-threaded JavaScript? Meet the Event Loop</a>
